@@ -43,4 +43,4 @@ dfSubjects <- cbind(subjects, dfX)
 dfActivitySubject <- cbind(dfActivityData,dfSubjects)
 
 means <- tbl_df(summarise_each(group_by(dfActivitySubject, activity, subject), funs(mean)))
-
+write.table(means, "./CourseProjectOutput.txt", row.name = FALSE)
